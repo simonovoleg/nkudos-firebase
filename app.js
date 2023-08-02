@@ -18,15 +18,34 @@ app.command('/nkudos', async (slackData) => {
   const commandMethod = commands[arg || 'give'];
 
   if (commandMethod) await commands[arg || 'give'](slackData);
-  else console.log('Command not found');
+  else slackData.logger.info('Command not found');
 });
 
-app.view('give_modal', async ({ack, view, logger}) => {
+app.view('give_modal', async ({ack, body, view, client, logger}) => {
   await ack();
-  // logger.info(view);
+
+  const senderId = body.user.id;
+  const receiverId = view.state.values.receiver.receiver.selected_user;
+  const message = view.state.values.message.message.value;
+  const value = view.state.values.value.value.selected_option.value;
+  const type = view.state.values.type.type.selected_option.value;
+  const channel = type === 'public' ? 'C05LAE04988' : receiverId;
+  const kudo = `:tada: Congrats <@${receiverId}>!!` +
+    ` You just received kudos from <@${senderId}>!\n` +
+    `>*Value displayed*: ${value} \n` +
+    `>*Message*: ${message}`;
+
+  try {
+    await client.chat.postMessage({
+      channel,
+      text: kudo
+    });
+  } catch (e) {
+    logger.error(e);
+  }
 });
 
 (async () => {
   await app.start(process.env.PORT || 3000);
-  console.log('nKudos server is running');
+  console.log(`nKudos server is running on port ${process.env.PORT || 3000}`);
 })();
