@@ -129,7 +129,7 @@ module.exports = async ({body, client, logger}) => {
   } catch (error) {
     logger.error(error);
   }
-}
+};
 
 // try {
 //   await client.views.open({
