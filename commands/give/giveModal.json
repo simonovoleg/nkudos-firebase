@@ -13,8 +13,14 @@
 			"type": "input",
 			"block_id": "receiver",
 			"element": {
-				"type": "users_select",
+				"type": "conversations_select",
 				"action_id": "receiver",
+				"filter": {
+					"include": [
+						"im"
+					],
+					"exclude_bot_users": true
+				},
 				"placeholder": {
 					"type": "plain_text",
 					"text": "Select someone to celebrate!"
@@ -47,7 +53,7 @@
 				"action_id": "value",
 				"placeholder": {
 					"type": "plain_text",
-					"text": "Select an value",
+					"text": "Select a value",
 					"emoji": true
 				},
 				"options": [

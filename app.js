@@ -18,6 +18,7 @@ app.command('/nkudos-th', async (slack) => {
   if (arg === 'g') arg = 'give'
   if (arg === 'b') arg = 'balance'
   if (arg === 'l') arg = 'leaderboard'
+  if (arg === 'h') arg = 'help'
 
   const commandMethod = commands[arg || 'give'];
 

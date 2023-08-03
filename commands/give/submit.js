@@ -5,7 +5,7 @@ const {
 
 module.exports = async ({body, view, client, logger}) => {
   const senderId = body.user.id;
-  const receiverId = view.state.values.receiver.receiver.selected_user;
+  const receiverId = view.state.values.receiver.receiver.selected_conversation;
   const message = view.state.values.message.message.value;
   const value = view.state.values.value.value.selected_option.value;
   const type = view.state.values.type.type.selected_option.value;
@@ -13,7 +13,6 @@ module.exports = async ({body, view, client, logger}) => {
     ` You just received kudos from <@${senderId}>!\n` +
     `>*Value displayed*: ${value} \n` +
     `>*Message*: ${message}`;
-
 
   try {
     const decrementKudosPromise = decrementAvailableKudos(senderId);
@@ -35,7 +34,7 @@ module.exports = async ({body, view, client, logger}) => {
     ];
 
 
-    if (type === 'public') {
+    if (type === 'Public') {
       promises.push(client.chat.postMessage({
         channel: 'C05LAE04988',
         text: kudo
