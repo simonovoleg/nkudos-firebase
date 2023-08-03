@@ -35,7 +35,7 @@ module.exports = async ({body, view, client, logger}) => {
     ];
 
 
-    if (type === 'public') {
+    if (type === 'Public') {
       promises.push(client.chat.postMessage({
         channel: 'C05LAE04988',
         text: kudo
