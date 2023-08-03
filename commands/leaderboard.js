@@ -50,7 +50,7 @@ module.exports = async ({body, client, logger}) => {
     try {
       const result = await client.chat.postMessage({
         text: msg,
-        channel: 'C05LYJUDD1N'
+        channel: 'C05L8UDJDQA'
       });
 
       console.log('Message sent successfully:', result.ts);
