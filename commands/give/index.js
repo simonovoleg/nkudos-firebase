@@ -12,7 +12,7 @@ module.exports = async ({body, client, logger}) => {
       });
     } else {
       await client.chat.postEphemeral({
-        text: "Unfortunately, you don't have any kudos",
+        text: "Unfortunately, you don't have any kudos. Please check back at the beginning of the month.",
         user: body.user_id,
         channel: body.channel_id
       })
