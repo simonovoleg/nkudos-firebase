@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const commands = require('./commands');
+const getUsers = require('./service');
 
 const {App} = require('@slack/bolt');
 
@@ -23,6 +24,7 @@ app.command('/nkudos', async (slackData) => {
 
 app.view('give_modal', async ({ack, body, view, client, logger}) => {
   await ack();
+  await getUsers();
 
   const senderId = body.user.id;
   const receiverId = view.state.values.receiver.receiver.selected_user;
