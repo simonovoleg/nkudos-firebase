@@ -1,8 +1,6 @@
 require('dotenv').config();
-
 const commands = require('./commands');
-const {getUsers, getUser} = require('./service');
-
+const submitKudosModal = require('./commands/give/submit');
 const {App} = require('@slack/bolt');
 
 const app = new App({
@@ -12,43 +10,19 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.command('/nkudos', async (slackData) => {
-  await slackData.ack();
+app.command('/nkudos-dan', async (slack) => {
+  await slack.ack();
 
-  const arg = slackData.body.text;
+  const arg = slack.body.text;
   const commandMethod = commands[arg || 'give'];
 
-  if (commandMethod) await commands[arg || 'give'](slackData);
-  else slackData.logger.info('Command not found');
+  if (commandMethod) await commands[arg || 'give'](slack);
+  else slack.logger.info('Command not found');
 });
 
-app.view('give_modal', async ({ack, body, view, client, logger}) => {
-  await ack();
-
-  // const users = await getUsers()
-  // console.log(users)
-  // const user = await getUser('D05KDGZ25LY')
-  // console.log(body.user.id, user)
-
-  const senderId = body.user.id;
-  const receiverId = view.state.values.receiver.receiver.selected_user;
-  const message = view.state.values.message.message.value;
-  const value = view.state.values.value.value.selected_option.value;
-  const type = view.state.values.type.type.selected_option.value;
-  const channel = type === 'public' ? 'C05LAE04988' : receiverId;
-  const kudo = `:tada: Congrats <@${receiverId}>!!` +
-    ` You just received kudos from <@${senderId}>!\n` +
-    `>*Value displayed*: ${value} \n` +
-    `>*Message*: ${message}`;
-
-  try {
-    await client.chat.postMessage({
-      channel,
-      text: kudo
-    });
-  } catch (e) {
-    logger.error(e);
-  }
+app.view('give_modal', async (slack) => {
+  await slack.ack();
+  await submitKudosModal(slack);
 });
 
 (async () => {
