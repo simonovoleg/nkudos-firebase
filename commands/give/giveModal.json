@@ -33,20 +33,6 @@
 		},
 		{
 			"type": "input",
-			"block_id": "message",
-			"element": {
-				"type": "plain_text_input",
-				"action_id": "message",
-				"multiline": true
-			},
-			"label": {
-				"type": "plain_text",
-				"text": "Message",
-				"emoji": true
-			}
-		},
-		{
-			"type": "input",
 			"block_id": "value",
 			"element": {
 				"type": "static_select",
@@ -63,7 +49,7 @@
 							"text": ":100: Bring Your A Game",
 							"emoji": true
 						},
-						"value": "Bring Your A Game"
+						"value": ":100: Bring Your A Game"
 					},
 					{
 						"text": {
@@ -71,7 +57,7 @@
 							"text": ":thumbsup: Do the Right Thing",
 							"emoji": true
 						},
-						"value": "Do the Right Thing"
+						"value": ":thumbsup: Do the Right Thing"
 					},
 					{
 						"text": {
@@ -79,7 +65,7 @@
 							"text": ":handshake: Respect Each Other",
 							"emoji": true
 						},
-						"value": "Respect Each Other"
+						"value": ":handshake: Respect Each Other"
 					},
 					{
 						"text": {
@@ -87,7 +73,7 @@
 							"text": ":grin: Make Someone’s Day",
 							"emoji": true
 						},
-						"value": "Make Someone’s Day"
+						"value": ":grin: Make Someone’s Day"
 					},
 					{
 						"text": {
@@ -95,7 +81,7 @@
 							"text": ":call_me_hand: Have Fun",
 							"emoji": true
 						},
-						"value": "Have Fun"
+						"value": ":call_me_hand: Have Fun"
 					},
 					{
 						"text": {
@@ -103,13 +89,27 @@
 							"text": ":trophy: Be a Winner",
 							"emoji": true
 						},
-						"value": "Be a Winner"
+						"value": ":trophy: Be a Winner"
 					}
 				]
 			},
 			"label": {
 				"type": "plain_text",
 				"text": "Which value did they represent?"
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "message",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "message",
+				"multiline": true
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Message",
+				"emoji": true
 			}
 		},
 		{
