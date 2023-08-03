@@ -7,7 +7,7 @@ admin.initializeApp({
 
 const db = admin.firestore();
 
-async function getUsers() {
+exports.getUsers = async () => {
   try {
     const collectionRef = db.collection('users');
 
@@ -15,13 +15,21 @@ async function getUsers() {
     const snapshot = await collectionRef.get();
 
     // Extract data from the documents
-    const data = snapshot.docs.map((doc) => doc.data());
-
-    console.log(data); // Do something with the data
-    // return data;
+    return snapshot.docs.map((doc) => doc.data());
   } catch (error) {
     console.error('Error querying Firestore:', error);
   }
 }
 
-module.exports = getUsers;
+exports.getUser = async (userId) => {
+  try {
+    const collectionRef = db
+      .collection('users')
+      .where('id', '==', userId);
+    const snapshot = await collectionRef.get();
+
+    if (!snapshot.empty) return snapshot.docs[0].data()
+  } catch (e) {
+    console.error('Error querying Firestore:', e);
+  }
+}
