@@ -42,7 +42,7 @@ module.exports = async ({body, client, logger}) => {
       "July", "August", "September", "October", "November", "December"
     ];
 
-    msg = `:sports_medal: ${monthNames[today.getMonth()]} leaderboard :sports_medal:`
+    msg = `:star: ${monthNames[today.getMonth()]} leaderboard :star:`
     for (const e in mostKudosByValue) {
       msg += `\n>*${e}*: <@${mostKudosByValue[e]}>`
     }
@@ -50,7 +50,7 @@ module.exports = async ({body, client, logger}) => {
     try {
       const result = await client.chat.postMessage({
         text: msg,
-        channel: 'C05JH69RX2A'
+        channel: 'C05LYJUDD1N'
       });
 
       console.log('Message sent successfully:', result.ts);

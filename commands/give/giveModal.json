@@ -49,7 +49,7 @@
 							"text": ":100: Bring Your A Game",
 							"emoji": true
 						},
-						"value": ":100: Bring Your A Game"
+						"value": ":100:  Bring Your A Game"
 					},
 					{
 						"text": {
@@ -57,7 +57,7 @@
 							"text": ":thumbsup: Do the Right Thing",
 							"emoji": true
 						},
-						"value": ":thumbsup: Do the Right Thing"
+						"value": ":thumbsup:  Do the Right Thing"
 					},
 					{
 						"text": {
@@ -65,7 +65,7 @@
 							"text": ":handshake: Respect Each Other",
 							"emoji": true
 						},
-						"value": ":handshake: Respect Each Other"
+						"value": ":handshake:  Respect Each Other"
 					},
 					{
 						"text": {
@@ -73,7 +73,7 @@
 							"text": ":grin: Make Someone’s Day",
 							"emoji": true
 						},
-						"value": ":grin: Make Someone’s Day"
+						"value": ":grin:  Make Someone’s Day"
 					},
 					{
 						"text": {
@@ -81,7 +81,7 @@
 							"text": ":call_me_hand: Have Fun",
 							"emoji": true
 						},
-						"value": ":call_me_hand: Have Fun"
+						"value": ":call_me_hand:  Have Fun"
 					},
 					{
 						"text": {
@@ -89,7 +89,7 @@
 							"text": ":trophy: Be a Winner",
 							"emoji": true
 						},
-						"value": ":trophy: Be a Winner"
+						"value": ":trophy:  Be a Winner"
 					}
 				]
 			},
