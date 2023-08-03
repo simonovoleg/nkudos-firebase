@@ -10,7 +10,7 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.command('/nkudos', async (slack) => {
+app.command('/nkudos-th', async (slack) => {
   await slack.ack();
 
   let arg = slack.body.text;
@@ -18,6 +18,7 @@ app.command('/nkudos', async (slack) => {
   if (arg === 'g') arg = 'give'
   if (arg === 'b') arg = 'balance'
   if (arg === 'l') arg = 'leaderboard'
+  if (arg === 'h') arg = 'help'
 
   const commandMethod = commands[arg || 'give'];
 
