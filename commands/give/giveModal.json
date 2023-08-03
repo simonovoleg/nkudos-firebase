@@ -1,125 +1,149 @@
 {
-  "callback_id": "give_modal",
-  "title": {
-    "type": "plain_text",
-    "text": "Give Kudos!"
-  },
-  "submit": {
-    "type": "plain_text",
-    "text": "Share!"
-  },
-  "blocks": [
-    {
-      "type": "input",
-      "block_id": "receiver",
-      "element": {
-        "type": "users_select",
-        "action_id": "receiver",
-        "placeholder": {
-          "type": "plain_text",
-          "text": "Select someone to celebrate!"
-        }
-      },
-      "label": {
-        "type": "plain_text",
-        "text": "Who do you want to send kudos to?"
-      }
-    },
-    {
-      "type": "input",
-      "block_id": "message",
-      "element": {
-        "type": "plain_text_input",
-        "action_id": "message",
-        "multiline": true
-      },
-      "label": {
-        "type": "plain_text",
-        "text": "Message",
-        "emoji": true
-      }
-    },
-    {
-      "type": "input",
-      "block_id": "value",
-      "element": {
-        "type": "static_select",
-        "action_id": "value",
-        "placeholder": {
-          "type": "plain_text",
-          "text": "Select an value",
-          "emoji": true
-        },
-        "options": [
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Hungry",
-              "emoji": true
-            },
-            "value": "Hungry"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Innovative",
-              "emoji": true
-            },
-            "value": "Innovative"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Vibrant",
-              "emoji": true
-            },
-            "value": "Vibrant"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": ":tada: Empathetic",
-              "emoji": true
-            },
-            "value": ":tada: Empathetic"
-          }
-        ]
-      },
-      "label": {
-        "type": "plain_text",
-        "text": "Who do you want to send kudos to?"
-      }
-    },
-    {
-      "type": "section",
-      "block_id": "type",
-      "text": {
-        "type": "mrkdwn",
-        "text": "*How would you like to send this kudo?*"
-      },
-      "accessory": {
-        "type": "radio_buttons",
-        "action_id": "type",
-        "options": [
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Public",
-              "emoji": true
-            },
-            "value": "public"
-          },
-          {
-            "text": {
-              "type": "plain_text",
-              "text": "Private (sends through a DM)",
-              "emoji": true
-            },
-            "value": "Private"
-          }
-        ]
-      }
-    }
-  ],
-  "type": "modal"
+	"callback_id": "give_modal",
+	"title": {
+		"type": "plain_text",
+		"text": "Give Kudos!"
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": "Share!"
+	},
+	"blocks": [
+		{
+			"type": "input",
+			"block_id": "receiver",
+			"element": {
+				"type": "users_select",
+				"action_id": "receiver",
+				"placeholder": {
+					"type": "plain_text",
+					"text": "Select someone to celebrate!"
+				}
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Who do you want to send kudos to?"
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "message",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "message",
+				"multiline": true
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Message",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"block_id": "value",
+			"element": {
+				"type": "static_select",
+				"action_id": "value",
+				"placeholder": {
+					"type": "plain_text",
+					"text": "Select an value",
+					"emoji": true
+				},
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": ":100: Bring Your A Game",
+							"emoji": true
+						},
+						"value": "Bring Your A Game"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": ":thumbsup: Do the Right Thing",
+							"emoji": true
+						},
+						"value": "Do the Right Thing"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": ":handshake: Respect Each Other",
+							"emoji": true
+						},
+						"value": "Respect Each Other"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": ":grin: Make Someone’s Day",
+							"emoji": true
+						},
+						"value": "Make Someone’s Day"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": ":call_me_hand: Have Fun",
+							"emoji": true
+						},
+						"value": "Have Fun"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": ":trophy: Be a Winner",
+							"emoji": true
+						},
+						"value": "Be a Winner"
+					}
+				]
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Which value did they represent?"
+			}
+		},
+		{
+			"type": "section",
+			"block_id": "type",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*How would you like to send this kudo?*"
+			},
+			"accessory": {
+				"type": "radio_buttons",
+				"action_id": "type",
+				"initial_option": {
+					"text": {
+						"type": "plain_text",
+						"text": "Public",
+						"emoji": true
+					},
+					"value": "Public"
+				},
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Public",
+							"emoji": true
+						},
+						"value": "Public"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Private (only sends DM)",
+							"emoji": true
+						},
+						"value": "Private"
+					}
+				]
+			}
+		}
+	],
+	"type": "modal"
 }
