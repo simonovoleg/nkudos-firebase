@@ -36,8 +36,13 @@ module.exports = async ({body, client, logger}) => {
       }
       mostKudosByValue[value] = userIdWithMostKudos;
     }
+    
+    const today = new Date();
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
 
-    msg = ':sports_medal: Leaderboard of the month :sports_medal:'
+    msg = `:sports_medal: ${monthNames[today.getMonth()]} leaderboard :sports_medal:`
     for (const e in mostKudosByValue) {
       msg += `\n>*${e}*: <@${mostKudosByValue[e]}>`
     }
