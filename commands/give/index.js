@@ -5,7 +5,7 @@ module.exports = async ({body, client, logger}) => {
   try {
     const user = await getUser(body.user_id);
 
-    if (user.nkudos_to_give > 0) {
+    if (!user || user.nkudos_to_give > 0) {
       await client.views.open({
         trigger_id: body.trigger_id,
         view: giveModal
