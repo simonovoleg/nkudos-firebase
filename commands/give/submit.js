@@ -1,4 +1,8 @@
-const {decrementAvailableKudos, addKudo} = require('../../datastore/service')
+const {
+  decrementAvailableKudos,
+  addKudo
+} = require('../../datastore/service')
+
 module.exports = async ({body, view, client, logger}) => {
   const senderId = body.user.id;
   const receiverId = view.state.values.receiver.receiver.selected_user;

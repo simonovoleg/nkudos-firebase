@@ -10,13 +10,15 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.command('/nkudos', async (slack) => {
+app.command('/nkudos-dan', async (slack) => {
   await slack.ack();
 
-  const arg = slack.body.text;
-  if (arg == 'g') arg = 'give'
-  if (arg == 'b') arg = 'balance'
-  if (arg == 'l') arg = 'leaderboard'
+  let arg = slack.body.text;
+
+  if (arg === 'g') arg = 'give'
+  if (arg === 'b') arg = 'balance'
+  if (arg === 'l') arg = 'leaderboard'
+
   const commandMethod = commands[arg || 'give'];
 
   if (commandMethod) await commands[arg || 'give'](slack);

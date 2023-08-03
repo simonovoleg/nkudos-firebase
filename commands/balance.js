@@ -1,4 +1,4 @@
-const { getUser } = require('../service');
+const { getUser } = require('../datastore/service');
 
 module.exports = async ({body, client, logger}) => {
   try {
