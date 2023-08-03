@@ -11,8 +11,8 @@ module.exports = async ({body, view, client, logger}) => {
   const type = view.state.values.type.type.selected_option.value;
   const kudo = `:tada: Congrats <@${receiverId}>!!` +
     ` You just received kudos from <@${senderId}>!\n` +
-    `>*Value displayed*: ${value} \n` +
-    `>*Message*: ${message}`;
+    `>*Value represented*: ${value} \n>\n` +
+    `>${message}`;
 
   try {
     const decrementKudosPromise = decrementAvailableKudos(senderId);
