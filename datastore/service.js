@@ -1,6 +1,5 @@
 const admin = require('firebase-admin');
 const serviceAccount = require('../service_account.json');
-const {user} = require('firebase-functions/v1/auth')
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
@@ -61,7 +60,8 @@ exports.addKudo = async (userId, kudo) => {
     await db.collection('users')
       .doc(userId)
       .update({
-        nkudos_received: admin.firestore.FieldValue.arrayUnion(kudo)
+        nkudos_received: admin.firestore.FieldValue.arrayUnion(kudo),
+        nkudos_balance: admin.firestore.FieldValue.increment(1)
       })
   } catch (e) {
     if (e.message.includes('NOT_FOUND')) {
