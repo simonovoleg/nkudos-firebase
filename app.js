@@ -10,7 +10,7 @@ const app = new App({
   appToken: process.env.SLACK_APP_TOKEN
 });
 
-app.command('/nkudos', async (slack) => {
+app.command('/nkudos-th', async (slack) => {
   await slack.ack();
 
   let arg = slack.body.text;
