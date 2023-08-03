@@ -53,7 +53,7 @@
 				"action_id": "value",
 				"placeholder": {
 					"type": "plain_text",
-					"text": "Select an value",
+					"text": "Select a value",
 					"emoji": true
 				},
 				"options": [
