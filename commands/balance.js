@@ -14,11 +14,11 @@ module.exports = async ({body, client, logger}) => {
     } else {
       message += 'Here is your nKudos Balance: \n' +
       `\n> Points to give:  5` +
-      `\n> Points received: 0`;    
+      `\n> Points received: 0`;
     }
     // try sending the message
     try {
-      // in the channel they are in but only visable to them
+      // in the channel they are in but only visible to them
       await client.chat.postEphemeral({
         text: message,
         user: body.user_id,
@@ -28,7 +28,7 @@ module.exports = async ({body, client, logger}) => {
     } catch (error) {
       logger.error(error);
     }
-    
+
   } catch (error) {
     logger.error(error);
   }
